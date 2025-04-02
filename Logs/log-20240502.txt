@@ -1,0 +1,48 @@
+2024-05-02 15:24:47.644 +03:00 [INF] Application Is Starting
+2024-05-02 15:24:48.132 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-02 15:24:48.283 +03:00 [INF] Creating key {377b0d57-9f4f-4805-95e4-5ce36851a402} with creation date 2024-05-02 12:24:48Z, activation date 2024-05-02 12:24:48Z, and expiration date 2024-07-31 12:24:48Z.
+2024-05-02 15:24:48.301 +03:00 [INF] Writing data to file 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys\key-377b0d57-9f4f-4805-95e4-5ce36851a402.xml'.
+2024-05-02 15:24:48.927 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2024-05-02 15:24:50.223 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui.css - -
+2024-05-02 15:24:50.224 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui-standalone-preset.js - -
+2024-05-02 15:24:50.240 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui-bundle.js - -
+2024-05-02 15:24:50.245 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2024-05-02 15:24:50.286 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2024-05-02 15:24:50.322 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 1405.2558ms
+2024-05-02 15:24:50.323 +03:00 [INF] The file /swagger-ui.css was not modified
+2024-05-02 15:24:50.323 +03:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2024-05-02 15:24:50.323 +03:00 [INF] The file /swagger-ui-bundle.js was not modified
+2024-05-02 15:24:50.327 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 103.3340ms
+2024-05-02 15:24:50.327 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui.css - - - 304 - text/css 107.2482ms
+2024-05-02 15:24:50.327 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui-bundle.js - - - 304 - application/javascript 86.9548ms
+2024-05-02 15:24:50.328 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 33.4134ms
+2024-05-02 15:24:50.420 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 175.3749ms
+2024-05-02 15:24:50.600 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2024-05-02 15:24:50.623 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/favicon-32x32.png - -
+2024-05-02 15:24:50.640 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-05-02 15:24:50.640 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/favicon-32x32.png - - - 200 628 image/png 17.7268ms
+2024-05-02 15:24:50.823 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - GymApp.Controllers.TrainingPlansController.EditTrainingPlan (GymApp). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-05-02 15:24:51.071 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 471.6636ms
+2024-05-02 15:24:59.109 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2024-05-02 15:24:59.160 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 50.9760ms
+2024-05-02 15:24:59.163 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2024-05-02 15:24:59.163 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2024-05-02 15:24:59.166 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 1.4652ms
+2024-05-02 15:24:59.186 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.5822ms
+2024-05-02 15:24:59.253 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2024-05-02 15:24:59.260 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - GymApp.Controllers.TrainingPlansController.EditTrainingPlan (GymApp). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2024-05-02 15:24:59.261 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 7.9083ms

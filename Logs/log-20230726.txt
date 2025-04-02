@@ -1,0 +1,30 @@
+2023-07-26 00:01:53.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-07-26 00:01:53.555 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 16.7438ms
+2023-07-26 00:01:53.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-07-26 00:01:53.573 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-07-26 00:01:53.573 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 4.0666ms
+2023-07-26 00:01:53.609 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.2083ms
+2023-07-26 00:01:53.714 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-07-26 00:01:53.719 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.3324ms
+2023-07-26 00:02:18.952 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/api/Users/c6b3f1c2-e1e2-4e7f-bb61-ad15511462db - -
+2023-07-26 00:02:18.985 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Endpoint GymApp.Controllers.UsersController.GetUser (GymApp) contains authorization metadata, but a middleware was not found that supports authorization.
+Configure your application startup by adding app.UseAuthorization() in the application startup code. If there are calls to app.UseRouting() and app.UseEndpoints(...), the call to app.UseAuthorization() must go between them.
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.ThrowMissingAuthMiddlewareException(Endpoint endpoint)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context, ICorsPolicyProvider corsPolicyProvider)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<UseMiddleware>b__2(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-07-26 00:02:19.000 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/api/Users/c6b3f1c2-e1e2-4e7f-bb61-ad15511462db - - - 500 - text/plain;+charset=utf-8 48.3564ms
+2023-07-26 00:03:06.722 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44320/api/Users/ - -
+2023-07-26 00:03:06.723 +03:00 [INF] Executing endpoint 'GymApp.Controllers.UsersController.GetUsers (GymApp)'
+2023-07-26 00:03:06.762 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName], [a].[UserType]
+FROM [AspNetUsers] AS [a]
+2023-07-26 00:03:06.778 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[GymApp.Models.UserDTO, GymApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-07-26 00:03:06.782 +03:00 [INF] Executed endpoint 'GymApp.Controllers.UsersController.GetUsers (GymApp)'
+2023-07-26 00:03:06.785 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44320/api/Users/ - - - 200 1766 application/json;+charset=utf-8 63.2238ms

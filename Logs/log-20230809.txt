@@ -1,0 +1,73 @@
+2023-08-09 05:25:36.801 +03:00 [INF] Application Is Starting
+2023-08-09 05:25:36.902 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-09 05:25:37.093 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-08-09 05:25:37.537 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-08-09 05:25:37.540 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-08-09 05:25:37.557 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 464.6430ms
+2023-08-09 05:25:37.558 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 12.8980ms
+2023-08-09 05:25:37.609 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 69.1167ms
+2023-08-09 05:25:37.700 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-08-09 05:25:37.822 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "PUT api/Gym/{id}" for actions - GymApp.Controllers.GymController.UpdateGym (GymApp),GymApp.Controllers.GymController.DeleteGym (GymApp). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-08-09 05:25:37.894 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 500 - text/plain;+charset=utf-8 193.6758ms
+2023-08-09 05:26:26.089 +03:00 [INF] Application Is Starting
+2023-08-09 05:26:26.163 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-09 05:26:26.290 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-08-09 05:26:26.667 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-08-09 05:26:26.673 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-08-09 05:26:26.673 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 384.6608ms
+2023-08-09 05:26:26.687 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 7.2606ms
+2023-08-09 05:26:26.740 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 67.4145ms
+2023-08-09 05:26:26.826 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-08-09 05:26:26.998 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 171.2381ms
+2023-08-09 05:33:19.862 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 72
+2023-08-09 05:33:21.015 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-08-09 05:33:22.569 +03:00 [INF] Login attempt for medo.doood2211@gmail.com
+2023-08-09 05:33:24.385 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-08-09 05:33:27.312 +03:00 [INF] Executed DbCommand (294ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-08-09 05:33:27.752 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-08-09 05:33:28.253 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-09 05:33:28.322 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-08-09 05:33:28.348 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 72 - 202 503 application/json;+charset=utf-8 8485.4767ms
+2023-08-09 05:34:20.255 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/Gym/98EC59D8-DE4B-44A4-3B27-08DB93D0A184 application/json 127
+2023-08-09 05:34:20.416 +03:00 [INF] Executing endpoint 'GymApp.Controllers.GymController.DeleteGym (GymApp)'
+2023-08-09 05:34:20.459 +03:00 [INF] Attempt to fetch user id
+2023-08-09 05:34:20.542 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-08-09 05:34:20.549 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-08-09 05:34:20.573 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GymCity], [g].[GymCountry], [g].[GymName], [g].[GymStreet]
+FROM [Gym] AS [g]
+WHERE [g].[Id] = @__id_0
+2023-08-09 05:34:20.584 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GymCity], [g].[GymCountry], [g].[GymName], [g].[GymStreet]
+FROM [Gym] AS [g]
+WHERE [g].[Id] = @__get_Item_0
+2023-08-09 05:34:20.820 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Gym]
+OUTPUT 1
+WHERE [Id] = @p0;
+2023-08-09 05:34:20.866 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-08-09 05:34:20.866 +03:00 [INF] Executed endpoint 'GymApp.Controllers.GymController.DeleteGym (GymApp)'
+2023-08-09 05:34:20.873 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/Gym/98EC59D8-DE4B-44A4-3B27-08DB93D0A184 application/json 127 - 204 - - 617.8069ms

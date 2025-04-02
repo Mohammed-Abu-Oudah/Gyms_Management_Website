@@ -1,0 +1,20 @@
+2023-07-07 19:53:37.305 +03:00 [INF] Application Is Starting
+2023-07-07 19:53:37.569 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger - -
+2023-07-07 19:53:37.734 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-07-07 19:53:37.785 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger - - - 301 - - 224.2257ms
+2023-07-07 19:53:38.256 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui-bundle.js - -
+2023-07-07 19:53:38.261 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui.css - -
+2023-07-07 19:53:38.264 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/swagger-ui-standalone-preset.js - -
+2023-07-07 19:53:38.313 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 578.6424ms
+2023-07-07 19:53:38.359 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-07-07 19:53:38.359 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-07-07 19:53:38.359 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-07-07 19:53:38.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui.css - - - 200 144929 text/css 110.4343ms
+2023-07-07 19:53:38.372 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-07-07 19:53:38.377 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 112.6119ms
+2023-07-07 19:53:38.386 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 9.3764ms
+2023-07-07 19:53:38.396 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-07-07 19:53:38.426 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 170.4222ms
+2023-07-07 19:53:38.520 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 124.0768ms
+2023-07-07 19:53:38.916 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-07-07 19:53:39.031 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 114.7323ms

@@ -1,0 +1,40 @@
+2023-07-03 21:59:01.237 +03:00 [INF] Application Is Starting
+2023-07-03 21:59:01.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-07-03 21:59:01.687 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-07-03 21:59:01.687 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-07-03 21:59:01.690 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 327.0648ms
+2023-07-03 21:59:01.703 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 7.1318ms
+2023-07-03 21:59:01.726 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.6397ms
+2023-07-03 21:59:01.782 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-07-03 21:59:01.855 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.3121ms
+2023-07-03 21:59:17.087 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/WeatherForecast - -
+2023-07-03 21:59:17.096 +03:00 [INF] Executing endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 21:59:17.110 +03:00 [INF] Executing ObjectResult, writing value of type 'GymApp.WeatherForecast[]'.
+2023-07-03 21:59:17.124 +03:00 [INF] Executed endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 21:59:17.124 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/WeatherForecast - - - 200 - application/json;+charset=utf-8 37.3543ms
+2023-07-03 21:59:17.879 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/WeatherForecast - -
+2023-07-03 21:59:17.879 +03:00 [INF] Executing endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 21:59:17.879 +03:00 [INF] Executing ObjectResult, writing value of type 'GymApp.WeatherForecast[]'.
+2023-07-03 21:59:17.879 +03:00 [INF] Executed endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 21:59:17.879 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/WeatherForecast - - - 200 - application/json;+charset=utf-8 0.7928ms
+2023-07-03 23:23:31.610 +03:00 [INF] Application Is Starting
+2023-07-03 23:23:31.731 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-07-03 23:23:32.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-07-03 23:23:32.089 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-07-03 23:23:32.092 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 364.4186ms
+2023-07-03 23:23:32.103 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 4.3311ms
+2023-07-03 23:23:32.129 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.4343ms
+2023-07-03 23:23:32.192 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-07-03 23:23:32.265 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 72.3964ms
+2023-07-03 23:23:55.699 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/WeatherForecast - -
+2023-07-03 23:23:55.710 +03:00 [INF] Executing endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 23:23:55.721 +03:00 [INF] Accessed Weather Forecast
+2023-07-03 23:23:55.728 +03:00 [INF] Executing ObjectResult, writing value of type 'GymApp.WeatherForecast[]'.
+2023-07-03 23:23:55.743 +03:00 [INF] Executed endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 23:23:55.743 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/WeatherForecast - - - 200 - application/json;+charset=utf-8 44.9752ms
+2023-07-03 23:23:56.920 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/WeatherForecast - -
+2023-07-03 23:23:56.920 +03:00 [INF] Executing endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 23:23:56.920 +03:00 [INF] Accessed Weather Forecast
+2023-07-03 23:23:56.920 +03:00 [INF] Executing ObjectResult, writing value of type 'GymApp.WeatherForecast[]'.
+2023-07-03 23:23:56.921 +03:00 [INF] Executed endpoint 'GymApp.Controllers.WeatherForecastController.Get (GymApp)'
+2023-07-03 23:23:56.921 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/WeatherForecast - - - 200 - application/json;+charset=utf-8 0.8592ms

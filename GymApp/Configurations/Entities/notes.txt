@@ -1,0 +1,2 @@
+instead of seeding the database in inside the database context file,
+we will do this seeding inside the entities folder.

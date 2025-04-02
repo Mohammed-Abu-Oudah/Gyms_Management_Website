@@ -1,0 +1,70 @@
+2023-09-17 04:30:55.018 +03:00 [INF] Application Is Starting
+2023-09-17 04:30:55.264 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-17 04:30:55.642 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-17 04:30:56.088 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-17 04:30:56.092 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-17 04:30:56.092 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 451.6692ms
+2023-09-17 04:30:56.093 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 3.9962ms
+2023-09-17 04:30:56.132 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.3644ms
+2023-09-17 04:30:56.219 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-17 04:30:56.316 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 96.9265ms
+2023-09-17 04:31:00.803 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-17 04:31:01.714 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-17 04:31:02.555 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-17 04:31:03.260 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-17 04:31:05.403 +03:00 [INF] Executed DbCommand (153ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-17 04:31:05.563 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-17 04:31:05.916 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-17 04:31:05.946 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-17 04:31:05.957 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 5153.7080ms
+2023-09-17 04:31:29.838 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - -
+2023-09-17 04:31:29.913 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-17 04:31:29.965 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-17 04:31:29.966 +03:00 [INF] Attempt to fetch user id
+2023-09-17 04:31:29.978 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-17 04:31:29.983 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-17 04:31:29.986 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-17 04:31:29.993 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__get_Item_0
+2023-09-17 04:31:30.084 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [TrainingPlans]
+OUTPUT 1
+WHERE [PlanId] = @p0;
+2023-09-17 04:31:30.101 +03:00 [INF] Successful delete operation in DeleteTrainingPlan.
+2023-09-17 04:31:30.105 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-17 04:31:30.105 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-17 04:31:30.107 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - - - 204 - - 270.4293ms
+2023-09-17 04:32:10.553 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - -
+2023-09-17 04:32:10.559 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-17 04:32:10.585 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-17 04:32:10.585 +03:00 [ERR] Provided training plan id doesn't exist.
+2023-09-17 04:32:10.587 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-09-17 04:32:10.597 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-17 04:32:10.597 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - - - 404 161 application/problem+json;+charset=utf-8 44.3675ms

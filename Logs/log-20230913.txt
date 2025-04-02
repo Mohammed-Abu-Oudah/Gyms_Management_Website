@@ -1,0 +1,779 @@
+2023-09-13 04:38:18.725 +03:00 [INF] Application Is Starting
+2023-09-13 04:38:18.916 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 04:38:19.233 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 04:38:19.683 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 453.0290ms
+2023-09-13 04:38:19.683 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 04:38:19.692 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 04:38:19.692 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 3.1823ms
+2023-09-13 04:38:19.724 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.3513ms
+2023-09-13 04:38:19.893 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 04:38:19.982 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.2124ms
+2023-09-13 04:38:41.257 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 04:38:42.236 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 04:38:43.027 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 04:38:43.810 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 04:38:46.118 +03:00 [INF] Executed DbCommand (178ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 04:38:46.288 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 04:38:46.559 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 04:38:46.590 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 04:38:46.601 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 5345.0122ms
+2023-09-13 04:40:29.796 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 04:40:29.856 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '9/7/2023 3:05:22 AM', Current time: '9/13/2023 1:40:29 AM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2023-09-13 04:40:29.951 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '9/7/2023 3:05:22 AM', Current time: '9/13/2023 1:40:29 AM'.
+2023-09-13 04:40:29.956 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|GymAdmin|Trainer)
+2023-09-13 04:40:29.962 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-09-13 04:40:29.964 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - - - 401 - - 168.3628ms
+2023-09-13 04:44:11.077 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 04:44:11.116 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 04:44:11.178 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 04:44:11.179 +03:00 [INF] Attempt to fetch user id
+2023-09-13 04:44:11.196 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 04:44:33.533 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 04:44:33.537 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan(Guid trainingPlanId) in D:\Projects\GymApp\GymApp\Controllers\TrainingPlansController.cs:line 236
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-09-13 04:44:33.567 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - - - 500 - text/plain;+charset=utf-8 22489.9492ms
+2023-09-13 04:59:30.948 +03:00 [INF] Application Is Starting
+2023-09-13 04:59:31.006 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 04:59:31.102 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 04:59:31.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 04:59:31.395 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 04:59:31.406 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 304.9503ms
+2023-09-13 04:59:31.411 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 9.8905ms
+2023-09-13 04:59:31.424 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.8132ms
+2023-09-13 04:59:31.551 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 04:59:31.642 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 91.0082ms
+2023-09-13 04:59:41.898 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 04:59:41.972 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 04:59:42.302 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 04:59:42.895 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 04:59:43.677 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 04:59:43.854 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 04:59:43.935 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 04:59:43.967 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 04:59:43.978 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2079.7956ms
+2023-09-13 05:00:01.512 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:00:01.568 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:00:01.626 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:00:01.626 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:00:01.639 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:00:01.642 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:00:01.643 +03:00 [ERR] Current user isn't allowed to perform the deleted action for the intended training plan.
+2023-09-13 05:00:01.644 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-09-13 05:00:01.655 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:00:01.657 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - - - 401 162 application/problem+json;+charset=utf-8 144.8278ms
+2023-09-13 05:05:24.663 +03:00 [INF] Application Is Starting
+2023-09-13 05:05:24.718 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:05:24.807 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:05:25.065 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:05:25.065 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:05:25.067 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 262.2846ms
+2023-09-13 05:05:25.081 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 13.4467ms
+2023-09-13 05:05:25.091 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.8145ms
+2023-09-13 05:05:25.132 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:05:25.216 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.9135ms
+2023-09-13 05:05:31.221 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:05:31.293 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:05:31.615 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:05:32.207 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:05:32.981 +03:00 [INF] Executed DbCommand (75ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:05:33.146 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:05:33.229 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:05:33.260 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:05:33.275 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2054.6057ms
+2023-09-13 05:05:48.679 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:05:48.732 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:05:48.798 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:05:52.811 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:06:15.484 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:07:33.602 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:09:10.229 +03:00 [INF] Application Is Starting
+2023-09-13 05:09:10.287 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:09:10.389 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:09:10.653 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:09:10.657 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:09:10.662 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 272.1079ms
+2023-09-13 05:09:10.664 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 5.2549ms
+2023-09-13 05:09:10.679 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.1257ms
+2023-09-13 05:09:10.719 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:09:10.799 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.0437ms
+2023-09-13 05:09:16.849 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:09:16.919 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:09:17.238 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:09:17.843 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:09:18.629 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:09:18.790 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:09:18.870 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:09:18.901 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:09:18.913 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2063.2869ms
+2023-09-13 05:09:43.018 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:09:43.084 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:09:43.134 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:09:46.438 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:09:47.970 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:09:59.332 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:12:30.967 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:12:35.076 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:12:39.142 +03:00 [ERR] Current user isn't allowed to perform the deleted action for the intended training plan.
+2023-09-13 05:12:39.532 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-09-13 05:12:39.543 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:12:39.546 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - - - 401 162 application/problem+json;+charset=utf-8 176528.1599ms
+2023-09-13 05:13:22.160 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:13:22.174 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 14.4743ms
+2023-09-13 05:13:22.176 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:13:22.177 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:13:22.179 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 2.2167ms
+2023-09-13 05:13:22.192 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.3716ms
+2023-09-13 05:13:22.304 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:13:22.309 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.7757ms
+2023-09-13 05:14:05.600 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:14:05.610 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 9.6784ms
+2023-09-13 05:14:05.613 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:14:05.613 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:14:05.617 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 2.8861ms
+2023-09-13 05:14:05.624 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 10.6052ms
+2023-09-13 05:14:05.710 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:14:05.713 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 3.0106ms
+2023-09-13 05:14:09.930 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:14:09.932 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:14:09.943 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:14:09.968 +03:00 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:14:09.975 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:14:09.975 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:14:09.975 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:14:09.975 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 45.6260ms
+2023-09-13 05:14:33.930 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:14:33.932 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:14:33.933 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:14:33.936 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:14:33.942 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:14:33.942 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:14:33.947 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:14:33.947 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 17.0550ms
+2023-09-13 05:14:45.801 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:14:45.801 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:14:45.822 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:14:51.207 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:14:54.129 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:15:03.736 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:15:21.516 +03:00 [INF] Application Is Starting
+2023-09-13 05:15:21.576 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:15:21.686 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:15:21.959 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:15:21.960 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:15:21.966 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 279.4568ms
+2023-09-13 05:15:21.974 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 7.9432ms
+2023-09-13 05:15:21.983 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.0818ms
+2023-09-13 05:15:22.027 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:15:22.113 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.2241ms
+2023-09-13 05:15:23.222 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:15:23.296 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:15:23.617 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:15:24.217 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:15:25.008 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:15:25.169 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:15:25.249 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:15:25.279 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:15:25.290 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2068.2571ms
+2023-09-13 05:15:37.499 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:15:37.551 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:15:37.598 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:15:39.694 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:15:40.212 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:15:45.946 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:15:56.678 +03:00 [INF] Application Is Starting
+2023-09-13 05:15:56.731 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:15:56.833 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:15:57.113 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:15:57.115 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 284.0632ms
+2023-09-13 05:15:57.115 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:15:57.125 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 7.4536ms
+2023-09-13 05:15:57.135 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.0631ms
+2023-09-13 05:15:57.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:15:57.314 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 84.4865ms
+2023-09-13 05:16:11.438 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:16:11.513 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:16:11.833 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:16:12.433 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:16:13.185 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:16:13.347 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:16:13.431 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:16:13.462 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:16:13.476 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2037.4139ms
+2023-09-13 05:16:27.128 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:16:27.182 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:16:27.240 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:16:29.440 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:16:29.872 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:16:32.976 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:26:00.592 +03:00 [INF] Application Is Starting
+2023-09-13 05:26:00.660 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:26:00.760 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:26:01.029 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:26:01.029 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:26:01.036 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 277.8066ms
+2023-09-13 05:26:01.039 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 6.3102ms
+2023-09-13 05:26:01.052 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.2679ms
+2023-09-13 05:26:01.091 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:26:01.175 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.8117ms
+2023-09-13 05:26:04.431 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:26:04.519 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:26:04.863 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:26:05.468 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:26:06.241 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:26:06.405 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:26:06.483 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:26:06.513 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:26:06.524 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2093.2821ms
+2023-09-13 05:26:16.899 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - -
+2023-09-13 05:26:16.953 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:26:17.006 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:26:19.013 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:26:19.564 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:26:23.036 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:26:40.132 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:27:27.844 +03:00 [INF] Executed DbCommand (550ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__get_Item_0
+2023-09-13 05:27:27.940 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [TrainingPlans]
+OUTPUT 1
+WHERE [PlanId] = @p0;
+2023-09-13 05:27:31.959 +03:00 [INF] Successful delete operation in DeleteTrainingPlan.
+2023-09-13 05:27:33.294 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-13 05:27:33.294 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:27:33.297 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/71B6544E-ACB5-4218-A416-08DBADBADB39 - - - 204 - - 76398.2971ms
+2023-09-13 05:35:09.452 +03:00 [INF] Application Is Starting
+2023-09-13 05:35:09.505 +03:00 [INF] User profile is available. Using 'C:\Users\medod\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-13 05:35:09.599 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/index.html - -
+2023-09-13 05:35:09.855 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - -
+2023-09-13 05:35:09.858 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/_vs/browserLink - -
+2023-09-13 05:35:09.862 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/index.html - - - 200 - text/html;charset=utf-8 264.6984ms
+2023-09-13 05:35:09.863 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_framework/aspnetcore-browser-refresh.js - - - 200 11982 application/javascript;+charset=utf-8 5.3670ms
+2023-09-13 05:35:09.878 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.8341ms
+2023-09-13 05:35:09.923 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - -
+2023-09-13 05:35:10.006 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44320/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 83.5191ms
+2023-09-13 05:35:18.846 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:35:18.921 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:35:19.255 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:35:19.902 +03:00 [WRN] Property 'Id' on entity type 'User' is part of a primary or alternate key, but has a constant default value set. Constant default values are not useful for primary or alternate keys since these properties must always have non-null unique values.
+2023-09-13 05:35:20.713 +03:00 [INF] Executed DbCommand (75ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:35:20.882 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:35:20.965 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:35:20.996 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:35:21.009 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 2162.0770ms
+2023-09-13 05:38:49.346 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70
+2023-09-13 05:38:49.348 +03:00 [INF] Executing endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:38:49.371 +03:00 [INF] Login attempt for aslgkajsldg@gmail.com
+2023-09-13 05:38:49.416 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-09-13 05:38:49.422 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:38:49.422 +03:00 [INF] Executing AcceptedResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-09-13 05:38:49.423 +03:00 [INF] Executed endpoint 'GymApp.Controllers.AccountController.Login (GymApp)'
+2023-09-13 05:38:49.423 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/Account/login/ application/json 70 - 202 496 application/json;+charset=utf-8 76.7735ms
+2023-09-13 05:39:57.597 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96
+2023-09-13 05:39:57.651 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:39:57.668 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:39:57.698 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:39:57.708 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:39:57.710 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:39:57.876 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TrainingPlans] ([PlanId], [CaloriesToConsume], [NumOfTrainingDaysPerWeek], [NumOfTrainingHours], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-09-13 05:39:57.887 +03:00 [INF] Successfully Created training plan in CreateUserTrainingPlan.
+2023-09-13 05:39:57.888 +03:00 [INF] Executing CreatedAtRouteResult, writing value of type 'GymApp.Data.TrainingPlan'.
+2023-09-13 05:39:57.903 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:39:57.907 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtRouteResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.ObjectResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-09-13 05:39:57.925 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96 - 500 - text/plain;+charset=utf-8 328.2522ms
+2023-09-13 05:40:46.733 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96
+2023-09-13 05:40:46.734 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:40:46.734 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:40:46.757 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:40:46.763 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:40:46.764 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:40:46.786 +03:00 [ERR] Failed executing DbCommand (20ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TrainingPlans] ([PlanId], [CaloriesToConsume], [NumOfTrainingDaysPerWeek], [NumOfTrainingHours], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-09-13 05:40:46.801 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'GymApp.ContextsAndFlunetAPIs.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-09-13 05:40:46.860 +03:00 [ERR] Something went wrong in CreateUserTrainingPlan.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at GymApp.Repositories.Repository.UnitOfWork.Save() in D:\Projects\GymApp\GymApp\Repositories\Repository\UnitOfWork.cs:line 34
+   at GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan(Guid userId, GetTrainingPlanDTO createTrainingPlanDTO) in D:\Projects\GymApp\GymApp\Controllers\TrainingPlansController.cs:line 193
+2023-09-13 05:40:46.869 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-13 05:40:46.870 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:40:46.870 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96 - 500 - text/plain;+charset=utf-8 137.4249ms
+2023-09-13 05:42:26.498 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96
+2023-09-13 05:42:26.500 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:42:26.502 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:42:26.523 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:42:26.533 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:42:26.537 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:42:26.546 +03:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TrainingPlans] ([PlanId], [CaloriesToConsume], [NumOfTrainingDaysPerWeek], [NumOfTrainingHours], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-09-13 05:42:26.548 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'GymApp.ContextsAndFlunetAPIs.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-09-13 05:42:26.592 +03:00 [ERR] Something went wrong in CreateUserTrainingPlan.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.TrainingPlans' with unique index 'IX_TrainingPlans_UserId'. The duplicate key value is (836fb0f1-b267-49c4-a8fd-44e54225f3a4).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:03cf57a1-7bc3-4734-9409-a04cdc53f176
+Error Number:2601,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at GymApp.Repositories.Repository.UnitOfWork.Save() in D:\Projects\GymApp\GymApp\Repositories\Repository\UnitOfWork.cs:line 34
+   at GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan(Guid userId, GetTrainingPlanDTO createTrainingPlanDTO) in D:\Projects\GymApp\GymApp\Controllers\TrainingPlansController.cs:line 193
+2023-09-13 05:42:26.593 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-13 05:42:26.593 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.CreateUserTrainingPlan (GymApp)'
+2023-09-13 05:42:26.593 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:44320/api/TrainingPlans/836fb0f1-b267-49c4-a8fd-44e54225f3a4 application/json 96 - 500 - text/plain;+charset=utf-8 95.0798ms
+2023-09-13 05:43:23.949 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - -
+2023-09-13 05:43:23.949 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:43:23.972 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:43:23.972 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:43:23.982 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:43:23.988 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:43:23.990 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:43:23.999 +03:00 [ERR] Failed to perform delete operation for DeleteTrainingPlan.
+2023-09-13 05:43:24.000 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-09-13 05:43:24.000 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__get_Item_0
+2023-09-13 05:43:24.011 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:43:24.011 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - - - 400 163 application/problem+json;+charset=utf-8 62.4915ms
+2023-09-13 05:43:42.524 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - -
+2023-09-13 05:43:42.524 +03:00 [INF] Executing endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:43:42.526 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__trainingPlanId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__trainingPlanId_0
+2023-09-13 05:43:42.527 +03:00 [INF] Attempt to fetch user id
+2023-09-13 05:43:42.528 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:43:42.529 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-09-13 05:43:42.530 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DisplayName], [a].[Email], [a].[EmailConfirmed], [a].[FullAddress], [a].[GymId], [a].[IdNumber], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[ResidenceCity], [a].[ResidenceCountry], [a].[ResidenceStreet], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserFirstName], [a].[UserLastName], [a].[UserMiddleName], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-09-13 05:43:42.531 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[PlanId], [t].[CaloriesToConsume], [t].[NumOfTrainingDaysPerWeek], [t].[NumOfTrainingHours], [t].[UserId]
+FROM [TrainingPlans] AS [t]
+WHERE [t].[PlanId] = @__get_Item_0
+2023-09-13 05:43:42.531 +03:00 [ERR] Failed to perform delete operation for DeleteTrainingPlan.
+2023-09-13 05:43:42.531 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-09-13 05:43:42.531 +03:00 [INF] Executed endpoint 'GymApp.Controllers.TrainingPlansController.DeleteTrainingPlan (GymApp)'
+2023-09-13 05:43:42.531 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:44320/api/TrainingPlans/7817818F-C396-4550-F8FF-08DBB402B843 - - - 400 163 application/problem+json;+charset=utf-8 7.3273ms
